@@ -1,0 +1,41 @@
+#incumbentNameId {
+    grid-area: header;
+}
+
+#incumbentAddressId {
+    grid-area: header;
+}
+
+#cityId {
+    grid-area: body;
+}
+
+#regionId {
+    grid-area: body;
+}
+
+#postalCodeId {
+    grid-area: body;
+}
+
+#countryId {
+    grid-area: body;
+}
+
+#ibanId {
+    grid-area: footer;
+}
+
+.container {
+    grid-template-rows: [row1-start] 25px [row1-end row2-start] 25px [row2-end];
+    grid-template-columns: auto 50px auto;
+    grid-template-areas:
+    "header header "
+    "body body "
+    "body body "
+    "footer footer";
+}
+
+input:required + label {
+    color: red;
+}
