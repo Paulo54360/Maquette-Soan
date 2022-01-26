@@ -23,7 +23,7 @@ export const PayForm = () => {
         const value = event.target.value;
     };
 
-    const Item = styled(Paper)(({ theme }) => ({
+    const Item = styled(Paper)(({theme}) => ({
         ...theme.typography.body2,
         padding: theme.spacing(1),
         textAlign: 'center',
@@ -40,9 +40,8 @@ export const PayForm = () => {
             position: 'relative',
             backgroundColor: theme.palette.mode === 'light' ? '#fcfcfb' : '#2b2b2b',
             border: '1px solid #ced4da',
-            fontSize: 16,
-            width: 'auto',
-            padding: '10px 12px',
+            fontSize: 12,
+            padding: theme.spacing(1),
             transition: theme.transitions.create([
                 'border-color',
                 'background-color',
@@ -56,35 +55,10 @@ export const PayForm = () => {
 
     return (
         <div>
-            <Box sx={{ flexGrow: 1 }}>
-                <Grid container spacing={2}>
-                    <Grid item xs={12}>
-                        <Item>xs=8</Item>
-                    </Grid>
-                    <Grid item xs={12}>
-                        <Item>xs=8</Item>
-                    </Grid>
-                    <Grid item xs={6}>
-                        <Item>xs=4</Item>
-                    </Grid>
-                    <Grid item xs={6}>
-                        <Item>xs=4</Item>
-                    </Grid>
-                    <Grid item xs={6}>
-                        <Item>xs=4</Item>
-                    </Grid>
-                    <Grid item xs={6}>
-                        <Item>xs=4</Item>
-                    </Grid>
-                    <Grid item xs={12}>
-                        <Item>xs=8</Item>
-                    </Grid>
-                </Grid>
-            </Box>
             <h1>Paiement sécurisé par prélèvement bancaire</h1>
             <Box sx={{flexGrow: 1}}>
-                <Grid container spacing={2}>
-                    <Grid item xs={12}>
+                <Grid container spacing={1}>
+                    <Grid item xl={12}>
                         <FormControl variant="standard">
                             <InputLabel shrink htmlFor="bootstrap-input" // Nom de la compagnie //
                                         id="incumbentNameId"
@@ -92,25 +66,24 @@ export const PayForm = () => {
                                         variant="standard"
                                         onChange={handleChange}
                                         required
-                                        sx={{gridArea: 'header'}}
                             >Titulaire du compte
                             </InputLabel>
                             <BootstrapInput id="bootstrap-input"/>
                         </FormControl>
                     </Grid>
-                        <Grid item xs={12}>
-                            <FormControl variant="standard">
-                                <InputLabel shrink htmlFor="bootstrap-input" // Nom de la compagnie //
+                    <Grid item xs={12}>
+                        <FormControl variant="standard">
+                            <InputLabel shrink htmlFor="bootstrap-input" // Nom de la compagnie //
                                         id="companyAddressId"
                                         name="incumbentAddress"
                                         variant="standard"
                                         onChange={handleChange}
                                         required
-                                >Adresse du titulaire</InputLabel>
+                            >Adresse du titulaire</InputLabel>
                             <BootstrapInput id="bootstrap-input"/>
                         </FormControl>
-                        </Grid>
-                        <Grid item xs={6}>
+                    </Grid>
+                    <Grid item xs={6}>
                         <FormControl variant="standard">
                             <InputLabel shrink htmlFor="bootstrap-input" // Nom de la compagnie //
                                         placeholder="Ville"
